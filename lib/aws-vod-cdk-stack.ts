@@ -1,4 +1,5 @@
 import { CloudFrontToS3 } from "@aws-solutions-constructs/aws-cloudfront-s3"
+import { LambdaToSns } from "@aws-solutions-constructs/aws-lambda-sns"
 import { Aws, Stack, StackProps } from "aws-cdk-lib"
 import { EventField, Rule, RuleTargetInput } from "aws-cdk-lib/aws-events"
 import { LambdaFunction } from "aws-cdk-lib/aws-events-targets"
@@ -36,8 +37,8 @@ export class AwsVodCdkStack extends Stack {
   constructor(scope: Construct, id: string, props: AwsVodCdkStackProps) {
     super(scope, id, props)
 
-    const notificationTopic = new Topic(this, "Notification", {
-      topicName: `${this.stackName}-Notification`,
+    const notificationTopic = new Topic(this, "Topic", {
+      topicName: `${this.stackName}-Topic`,
     })
 
     notificationTopic.addSubscription(new EmailSubscription(props.adminEmail))
@@ -255,6 +256,18 @@ export class AwsVodCdkStack extends Stack {
           }),
         }),
       ],
+    })
+
+    new LambdaToSns(this, "Notification", {
+      // NOSONAR
+      existingLambdaObj: jobSubmit,
+      existingTopicObj: notificationTopic,
+    })
+
+    new LambdaToSns(this, "CompleteSNS", {
+      // NOSONAR
+      existingLambdaObj: jobComplete,
+      existingTopicObj: notificationTopic,
     })
   }
 }

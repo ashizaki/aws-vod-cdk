@@ -32,6 +32,13 @@
   dependencies:
     "@aws-solutions-constructs/core" "2.29.0"
 
+"@aws-solutions-constructs/aws-lambda-sns@^2.29.0":
+  version "2.29.0"
+  resolved "https://registry.yarnpkg.com/@aws-solutions-constructs/aws-lambda-sns/-/aws-lambda-sns-2.29.0.tgz#e0dddb9fb0c282437e92eba01e2e1f8b570d358e"
+  integrity sha512-FdYNzSGqo9cXKT/6Do/XsNREuc+ldLEP+tXyAd0hq800iqfoOGsB+cWpZPpWXPKqn617XBv4DvD/z6t7VHLi3A==
+  dependencies:
+    "@aws-solutions-constructs/core" "2.29.0"
+
 "@aws-solutions-constructs/core@2.29.0":
   version "2.29.0"
   resolved "https://registry.yarnpkg.com/@aws-solutions-constructs/core/-/core-2.29.0.tgz#2379528975b96f3eabe7d873632b155316a81178"
