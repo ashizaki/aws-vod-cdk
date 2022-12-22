@@ -209,7 +209,6 @@ export class AwsVodCdkStack extends Stack {
         MEDIACONVERT_ENDPOINT: props.mediaConvertEndpoint,
         CLOUDFRONT_DOMAIN: cloudFront.cloudFrontWebDistribution.distributionDomainName,
         SOURCE_BUCKET: source.bucketName,
-        JOB_MANIFEST: "jobs-manifest.json",
         STACKNAME: Aws.STACK_NAME,
         SNS_TOPIC_ARN: notificationTopic.topicArn,
       },

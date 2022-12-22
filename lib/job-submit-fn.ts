@@ -51,7 +51,7 @@ const createJobRequest = (
     Settings: {
       OutputGroups: [
         {
-          Name: "Apple HLS",
+          Name: "AppleHLS",
           Outputs: [
             {
               ContainerSettings: {
