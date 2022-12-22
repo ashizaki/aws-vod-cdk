@@ -95,6 +95,7 @@ const sendSns = async (topic: string, stackName: string, status: string, data: a
         /**
          * reduce the data object just send Id,InputFile, Outputs
          */
+        id = data.id
         msg = data
         break
       case "CANCELED":
