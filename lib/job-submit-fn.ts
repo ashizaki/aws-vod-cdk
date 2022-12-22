@@ -2,16 +2,13 @@ import { EventBridgeHandler } from "aws-lambda"
 import AWS, { MediaConvert } from "aws-sdk"
 import { v4 as uuid } from "uuid"
 
-export interface JobSubmitFnParam {
+export interface Detail {
   key: string
   size: string
   bucketName: string
 }
 
-export const handler: EventBridgeHandler<string, JobSubmitFnParam, any> = async (
-  event,
-  context,
-) => {
+export const handler: EventBridgeHandler<string, Detail, any> = async (event, context) => {
   const { MEDIACONVERT_ENDPOINT, MEDIACONVERT_ROLE, DESTINATION_BUCKET, STACKNAME, SNS_TOPIC_ARN } =
     process.env
 
