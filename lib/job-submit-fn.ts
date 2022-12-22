@@ -526,7 +526,7 @@ const createJobRequest = (
               SegmentLength: 3,
               TimedMetadataId3Period: 10,
               CaptionLanguageSetting: "OMIT",
-              Destination: `${outputPath}/${"Apple HLS".replace(/\\s+/g, "")}${1}/`,
+              Destination: `${outputPath}/AppleHLS${1}/`,
               TimedMetadataId3Frame: "PRIV",
               CodecSpecification: "RFC_4281",
               OutputSelection: "MANIFESTS_AND_SEGMENTS",
