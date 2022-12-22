@@ -95,13 +95,7 @@ const sendSns = async (topic: string, stackName: string, status: string, data: a
         /**
          * reduce the data object just send Id,InputFile, Outputs
          */
-        id = data.Id
-        msg = {
-          Id: data.Id,
-          InputFile: data.InputFile,
-          InputDetails: data.InputDetails,
-          Outputs: data.Outputs,
-        }
+        msg = data
         break
       case "CANCELED":
       case "ERROR":
