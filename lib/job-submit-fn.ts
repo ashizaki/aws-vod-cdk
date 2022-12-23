@@ -575,7 +575,7 @@ const createJobRequest = (
   }
 }
 
-const sendError = async (topic: string, stackName: string, logGroupName: string, err: Error) => {
+const sendError = async (topic: string, stackName: string, logGroupName: string, err: any) => {
   console.log(`Sending SNS error notification: ${err}`)
   const sns = new AWS.SNS({
     region: process.env.REGION,
